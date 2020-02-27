@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang='en'>
+    {% load static %}
     <head>
         <!-- meta tags -->
         <meta charset="utf-8">
@@ -7,6 +8,9 @@
         
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+        <!-- Weather Icons CSS -->
+        <link rel="stylesheet" href="{% static 'weathericons/css/weather-icons.min.css' %}">
     </head>
     <body>
         <div class="container-fluid">
@@ -15,7 +19,7 @@
                 <!-- Left Column -->
                 <div class="col">
                     <div class="row justify-content-center">
-                        Weather
+                        <i class="wi wi-day-sunny"></i>
                     </div>
                     <div class="row">
                         <div class="col">
@@ -45,6 +49,8 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Right Column -->
                 <div class="col">
                     <div class="row justify-content-center">
                         <button type="button" class="btn btn-primary btn-lg">Schedule</button>
