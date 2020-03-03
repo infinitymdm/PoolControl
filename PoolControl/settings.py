@@ -37,11 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-#    'Homepage', # don't know if we need this with the below line for Homepage.apps
-    'Homepage.apps.HomepageConfig',
-    'Schedule',
-    'Temperature',
-    'WaterInfo',
+    'Homepage',
 ]
 
 MIDDLEWARE = [

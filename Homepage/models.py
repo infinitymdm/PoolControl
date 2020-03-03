@@ -6,7 +6,7 @@ from django.db import models
 
 # Define User_Settings model
 class User_Settings(models.Model) :
-    water_temp_desired = models.IntegerField(default = False)
+    water_temp_desired = models.IntegerField(default = 0)
     filter_pump_state = models.BooleanField(default = False)
     heater_state = models.BooleanField(default = False)
 #    set_schedule = schedule()
