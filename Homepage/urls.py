@@ -6,7 +6,7 @@ urlpatterns = [
     # Go to Schedule Page
     path('schedule/', views.schedule, name='schedule'),
 
-    # Go to thermostat Page
+    # Go to Thermostat Page
     path('thermostat/', views.thermostat, name='thermostat'),
 
     # Go to Water Info Page
