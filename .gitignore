@@ -1,5 +1,6 @@
 # Untracked files:
 __pycache__
+migrations
 */__init__.py
 *.pyc
 db.sqlite3
