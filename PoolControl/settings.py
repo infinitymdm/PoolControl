@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     '.gooberpool.com',
+    '10.50.33.76',
     'localhost',
     ]
 
