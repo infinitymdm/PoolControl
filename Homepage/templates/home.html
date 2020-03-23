@@ -1,11 +1,11 @@
 
 {% extends 'generic.html' %}
 
-!-- Left Column -->
+<!-- Left Column -->
 {% block leftColumn %}
-<div class="col">
+<div class="col text-light">
     <div class="row justify-content-center">
-        <i class="wi wi-day-sunny"></i>
+        <i class="wi wi-day-sunny pt-4 pb-4" style="font-size: 5rem;"></i>
     </div>
     <div class="row">
         <div class="col">
@@ -15,7 +15,7 @@
             Water temp
         </div>
     </div>
-    <div class="row">
+    <div class="row justify-content-center">
         Time
     </div>
     <div class="row">
@@ -39,15 +39,15 @@
 
 <!-- Right Column -->
 {% block rightColumn %}
-<div class="col">
+<div class="col text-light">
     <div class="row pt-4">
-        <button type="button" class="btn btn-primary btn-lg container mx-4">Schedule</button>
+        <button type="button" class="btn btn-outline-light btn-lg container mx-4">Schedule</button>
     </div>
     <div class="row pt-4">
-        <button type="button" class="btn btn-primary btn-lg container mx-4">Thermostat</button>
+        <button type="button" class="btn btn-outline-light btn-lg container mx-4">Thermostat</button>
     </div>
     <div class="row pt-4">
-        <button type="button" class="btn btn-primary btn-lg container mx-4">Water Info</button>
+        <button type="button" class="btn btn-outline-light btn-lg container mx-4">Water Info</button>
     </div>
 </div>
 {% endblock %}
