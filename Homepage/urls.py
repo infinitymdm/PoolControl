@@ -14,4 +14,5 @@ urlpatterns = [
 
     # Go to Homepage
     path('', views.home, name='home'),
+    path('home/', views.home, name='home'),
 ]
