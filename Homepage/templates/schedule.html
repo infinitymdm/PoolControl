@@ -10,7 +10,19 @@
     {% csrf_token %}
     <!-- <input type='text', name='schedule', placeholder="Schedule Title" /> -->
     {{ form.as_p }}
-    <input type='submit', value='Save' />
+    <input type='submit' value='Save' />
 
 </form>
+{% endblock %}
+
+{% block rightColumn %}
+    {% if schedules %}
+        <ul>
+            {% for schedule_obj in schedules %}
+                <li><a href= "/schedule/{{ schedule_obj.id }}/"> {{ schedule_obj.name }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <h3>No set schedules</h3>    
+    {% endif %}
 {% endblock %}

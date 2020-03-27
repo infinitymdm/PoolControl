@@ -19,10 +19,16 @@ class Schedule_Form(forms.ModelForm):
         model = Schedule
         fields = [
             'name',
-            #'equipment_type',
+            'turn_heater_on',
             #'heater_temp',
-            #'turn_on_time',
-            #'duration',
-            #'days_of_operation',
+            'turn_on_time',
+            'turn_off_time',
+            'Sunday',
+            'Monday',
+            'Tuesday',
+            'Wednesday',
+            'Thursday',
+            'Friday',
+            'Saturday',
             'repeat',
             ]

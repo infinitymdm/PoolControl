@@ -1,4 +1,5 @@
 from django.db import models
+import datetime
 
 # Create your models here.
 
@@ -9,19 +10,26 @@ class User_Settings(models.Model):
     water_temp_desired = models.IntegerField(default = 0)
     pump_state = models.BooleanField(default = False)
     heater_state = models.BooleanField(default = False)
-    # pump_state_time = needs to count up hr:min:sec to tell the user how long the pump has been in its current state
+    pump_state_duration = models.DurationField(default= datetime.timedelta(0,0,0,0,0,0,0))
 
     def __str__(self):
         return 'Pump ON: ' + str(self.pump_state) + ', Heater ON: ' + str(self.heater_state)
 
+
 class Schedule(models.Model):
     name = models.CharField(max_length=1000)
-    # equipment_type = pump, heater, other?
+    turn_heater_on = models.BooleanField(default= False)
     # if heater, what temp?
-    # turn_on_time = timeOfDay
-    # duration = length of time to be on
-    # days_of_operation = Sunday,Monday,etc.
-    # If true, the schedule will not be deleted. If false, this one schedule will delete itself once it has turned off following its duration.
+    turn_on_time = models.TimeField(default= datetime.datetime.now().time())
+    turn_off_time = models.TimeField(default= datetime.datetime.now().time())
+    Sunday = models.BooleanField(default= False)
+    Monday = models.BooleanField(default= False)
+    Tuesday = models.BooleanField(default= False)
+    Wednesday = models.BooleanField(default= False)
+    Thursday = models.BooleanField(default= False)
+    Friday = models.BooleanField(default= False)
+    Saturday = models.BooleanField(default= False)
+    # If true, the schedule will not be deleted when the turn_off_time has been reached.
     repeat = models.BooleanField(default=True)
 
 # Define Sensor_Info model
