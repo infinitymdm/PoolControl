@@ -4,3 +4,10 @@
 {%include 'navbar.html' %}
 {% endblock %}
 
+{% block script %}
+<script>
+    $(document).ready(function(){
+        $('#thermostat-tab').addClass('active bg-dark');
+    });
+</script>
+{% endblock %}

@@ -3,3 +3,11 @@
 {% block navbar %}
 {%include 'navbar.html' %}
 {% endblock %}
+
+{% block script %}
+<script>
+    $(document).ready(function(){
+        $('#water_info-tab').addClass('active bg-dark');
+    });
+</script>
+{% endblock %}

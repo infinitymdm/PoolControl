@@ -17,7 +17,7 @@ from .models import Sensor_Info
 #    }
 #        return render(request, self.template_name, context)
 def home(request):
-    return render(request, 'home.html')
+    return render(request, 'home.html', { "meta" : {"title" : "Goober Pool Control"} })
 
 def schedule(request):
     form = Schedule_Form(request.POST or None)
