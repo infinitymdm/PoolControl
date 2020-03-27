@@ -1,11 +1,16 @@
-    
-    {%include 'navbar.html' %}
+{% extends 'generic.html' %}
 
-<form method="POST">{% csrf_token %}
-<!--    <input type='text', name='schedule', placeholder="Schedule Title" />
--->
-{{ form.as_p }}
-<input type='submit', value='Save' />
+{% block navbar %}
+{%include 'navbar.html' %}
+{% endblock %}
+
+{% block leftColumn %}
+<form method="POST">
+    
+    {% csrf_token %}
+    <!-- <input type='text', name='schedule', placeholder="Schedule Title" /> -->
+    {{ form.as_p }}
+    <input type='submit', value='Save' />
 
 </form>
-
+{% endblock %}

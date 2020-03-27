@@ -25,7 +25,12 @@ SECRET_KEY = 'j3dn=@=l=&y_d3g_*ws&ca1cujdn6*3ohogw)r7yjbuq289&mq'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'www.gooberpool.com',
+    'gooberpool.com',
+    '10.50.33.76',
+    'localhost',
+    ]
 
 
 # Application definition

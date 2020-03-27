@@ -25,17 +25,18 @@ def schedule(request):
         form.save()
 
     context = {
-        'form': form
+        'form': form,
+        "meta" : {"title" : "Goober Pool Control"}
     }
-    return render(request, 'schedule.html',context)
+    return render(request, 'schedule.html', context)
 ##    return render(request, "schedules/create_schedule.html",context)
 #    return HttpResponse('Welcome to the Schedule Page')
 
 def thermostat(request):
-    return render(request, 'thermostat.html',{})
+    return render(request, 'thermostat.html', { "meta" : {"title" : "Goober Pool Control"} })
 #    return HttpResponse('Welcome to the Thermostat Page')
 
 def water_info(request):
-    return render(request, 'water_info.html',{})
+    return render(request, 'water_info.html', { "meta" : {"title" : "Goober Pool Control"} })
 #    return HttpResponse('Welcome to the Water Info Page')
     
