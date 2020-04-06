@@ -36,5 +36,15 @@ def thermostat(request):
     return render(request, 'thermostat.html', { "meta" : meta })
 
 def water_info(request):
-    return render(request, 'water_info.html', { "meta" : meta })
+    water_obj = Sensor_Info.objects.get(id=1)
+    water_data = {
+        'water_temp': water_obj.water_temp_sensed,
+        'water_pH': water_obj.water_pH_sensed,
+        'water_sanitizer': water_obj.water_sanitizer_sensed
+    }
+    context = {
+        'water_data': water_data,
+        'meta': meta
+    }
+    return render(request, 'water_info.html', context)
     

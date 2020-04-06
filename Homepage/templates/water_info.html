@@ -3,3 +3,32 @@
 {% block navbar %}
 {%include 'navbar.html' %}
 {% endblock %}
+
+<!-- Left Column -->
+{% block leftColumn %}
+<div class="row">
+    <div class="col">
+        Water Temp: 
+    </div>
+    <div class="col">
+        {{ water_data.water_temp }}
+        °F
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        Water pH: 
+    </div>
+    <div class="col">
+        {{ water_data.water_pH }}
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        Water Sanitizer: 
+    </div>
+    <div class="col">
+        {{ water_data.water_sanitizer }}
+    </div>
+</div>
+{% endblock %}
