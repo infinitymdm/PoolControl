@@ -1,18 +1,17 @@
 from django.shortcuts import render
 
 from .forms import Schedule_Form
-from .models import Sensor_Info, Schedule
+from .models import Sensor_Info, Schedule, User_Settings
 
 # Define the Title for the webpage that will show up on the tab
 meta = {"title" : "Goober Pool Control"}
 
-sensor_obj = Sensor_Info.objects.get(id=1)
-sensor_data = {
-        'water_temp': sensor_obj.water_temp_sensed,
-        'air_temp': sensor_obj.air_temp_sensed,
-}
-
 def home(request):
+    sensor_obj = Sensor_Info.objects.get(id=1)
+    sensor_data = {
+            'water_temp': sensor_obj.water_temp_sensed,
+            'air_temp': sensor_obj.air_temp_sensed,
+    }
     context = {
         'sensor_data' : sensor_data,
         'meta' : meta
