@@ -1,8 +1,15 @@
 from django import forms
 
-from .models import User_Settings
-from .models import Sensor_Info
-from .models import Schedule
+from .models import User_Settings, Sensor_Info, Schedule
+
+class User_Settings_Form(forms.ModelForm):
+    class Meta:
+        model = User_Settings
+        fields = [
+            'pump_state',
+            'heater_state',
+#            'pump_duration'
+        ]
 
 class Sensor_Info_Form(forms.ModelForm):
     class Meta:

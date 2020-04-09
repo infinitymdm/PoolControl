@@ -26,3 +26,11 @@
         <h3>No set schedules</h3>    
     {% endif %}
 {% endblock %}
+
+{% block script %}
+<script>
+    $(document).ready(function(){
+        $('#schedule-tab').addClass('active bg-dark');
+    });
+</script>
+{% endblock %}
