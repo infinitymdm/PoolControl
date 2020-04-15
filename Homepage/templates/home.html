@@ -9,16 +9,22 @@
 <div class="row justify-content-center">
     <i class="wi wi-day-sunny pt-4 pb-4" style="font-size: 5rem;"></i>
 </div>
-<div class="row justify-content-center" style="font-size: 24pt;">
-    {{ user_settings_data.current_time }}
+<div class="row justify-content-center text-center" style="font-size: 24pt;">
+    {{ user_settings_data.current_time.date }}
+    <br>
+    {{ user_settings_data.current_time.time }}
 </div>
+<br>
 <div class="row justify-content-center" style="font-size: 12pt;">
-        The system has been (state) for (duration)
+        {{ user_settings_data.pump_state }}
+        since
+        (duration)
 </div>
 {% endblock %}
 
 <!-- Right Column -->
 {% block rightColumn %}
+<br>
 <div class="row" style="font-size: 16pt;">
     <div class="col">
         Air Temp: 
@@ -26,8 +32,10 @@
     <div class="col">
         {{ sensor_data.air_temp }}
         °F
+
     </div>
 </div>
+<br>
 <div class="row" style="font-size: 16pt;">
     <div class="col">
         Water Temp: 
@@ -37,20 +45,17 @@
         °F
     </div>
 </div>
+<br>
 <div class="row" style="font-size: 16pt;">
     <div class="col">
-        Pump Status:
-    </div>
-    <div class="col">
-        toggle
-    </div>
-</div>
-<div class="row" style="font-size: 16pt;">
-    <div class="col">
-        Heater Status:
-    </div>
-    <div class="col">
-        toggle
+        <form method="POST">
+    
+            {% csrf_token %}
+            <!-- <input type='text', name='schedule', placeholder="Schedule Title" /> -->
+            {{ form.as_p }}
+            <input type='submit' value='Save' />
+        
+        </form>
     </div>
 </div>
 
