@@ -1,4 +1,3 @@
-
 {% extends 'generic.html' %}
 
 {% block navbar %}
@@ -10,22 +9,35 @@
 <div class="row justify-content-center">
     <i class="wi wi-day-sunny pt-4 pb-4" style="font-size: 5rem;"></i>
 </div>
-<div class="row">
+<div class="row justify-content-center" style="font-size: 24pt;">
+    {{ user_settings_data.current_time }}
+</div>
+<div class="row justify-content-center" style="font-size: 12pt;">
+        The system has been (state) for (duration)
+</div>
+{% endblock %}
+
+<!-- Right Column -->
+{% block rightColumn %}
+<div class="row" style="font-size: 16pt;">
     <div class="col">
         Air Temp: 
+    </div>
+    <div class="col">
         {{ sensor_data.air_temp }}
         °F
     </div>
+</div>
+<div class="row" style="font-size: 16pt;">
     <div class="col">
         Water Temp: 
+    </div>
+    <div class="col">
         {{ sensor_data.water_temp }}
         °F
     </div>
 </div>
-<div class="row justify-content-center">
-    Time
-</div>
-<div class="row">
+<div class="row" style="font-size: 16pt;">
     <div class="col">
         Pump Status:
     </div>
@@ -33,7 +45,7 @@
         toggle
     </div>
 </div>
-<div class="row">
+<div class="row" style="font-size: 16pt;">
     <div class="col">
         Heater Status:
     </div>
@@ -41,19 +53,7 @@
         toggle
     </div>
 </div>
-{% endblock %}
 
-<!-- Right Column -->
-{% block rightColumn %}
-<div class="row pt-4">
-    <a type="button" class="btn btn-outline-light btn-lg container mx-4" href="/schedule">Schedule</a>
-</div>
-<div class="row pt-4">
-    <a type="button" class="btn btn-outline-light btn-lg container mx-4" href="/thermostat">Thermostat</a>
-</div>
-<div class="row pt-4">
-    <a type="button" class="btn btn-outline-light btn-lg container mx-4" href="/water_info">Water Info</a>
-</div>
 {% endblock %}
 
 {% block script %}

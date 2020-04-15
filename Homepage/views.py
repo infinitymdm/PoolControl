@@ -12,9 +12,18 @@ def home(request):
             'water_temp': sensor_obj.water_temp_sensed,
             'air_temp': sensor_obj.air_temp_sensed,
     }
+    user_settings_obj = User_Settings.objects.get(id=1)
+    user_settings_data = {
+            'water_temp_desired': user_settings_obj.water_temp_desired,
+            'data_pump_state': user_settings_obj.pump_state,
+            'heater_state': user_settings_obj.heater_state,
+            'pump_state_duration': user_settings_obj.pump_state_duration,
+            'current_time': user_settings_obj.current_time,
+    }
     context = {
         'sensor_data' : sensor_data,
-        'meta' : meta
+        'user_settings_data': user_settings_data,
+        'meta' : meta,
     }
     return render(request, 'home.html', context)
 

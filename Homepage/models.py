@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 import datetime
 
 # Create your models here.
@@ -11,13 +12,13 @@ class User_Settings(models.Model):
     pump_state = models.BooleanField(default = False)
     heater_state = models.BooleanField(default = False)
     pump_state_duration = models.DurationField(default= datetime.timedelta(0,0,0,0,0,0,0))
-
+    current_time = timezone.now()
     def __str__(self):
         return 'Pump ON: ' + str(self.pump_state) + ', Heater ON: ' + str(self.heater_state)
 
 
 class Schedule(models.Model):
-    name = models.CharField(max_length=1000)
+    name = models.CharField(max_length=100)
     turn_heater_on = models.BooleanField(default= False)
     # if heater, what temp?
     turn_on_time = models.TimeField(default= datetime.datetime.now().time())
@@ -29,7 +30,7 @@ class Schedule(models.Model):
     Thursday = models.BooleanField(default= False)
     Friday = models.BooleanField(default= False)
     Saturday = models.BooleanField(default= False)
-    # If true, the schedule will not be deleted when the turn_off_time has been reached.
+    # If false, the schedule will be deleted when the turn_off_time has been reached.
     repeat = models.BooleanField(default=True)
 
 # Define Sensor_Info model
