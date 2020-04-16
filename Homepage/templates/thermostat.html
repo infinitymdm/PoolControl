@@ -21,6 +21,7 @@
     <br>
     {{ current_time.time }}
 </div>
+<br><br><br>
 {% endblock %}
 
 {% block rightColumn %}
@@ -55,9 +56,11 @@
     </div>
 </div>
 <br>
-<form method="POST">
-    {% csrf_token %}
-    {{ user_temp_desired.as_p }}
-    <input type='submit' value='Save' />
-</form>
+<div class="row justify-content-center" style="font-size: 14pt;">
+    <form method="POST">
+        {% csrf_token %}
+        {{ user_temp_desired.as_p }}
+        <input type='submit' value='Save' />
+    </form>
+</div>
 {% endblock %}
