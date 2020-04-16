@@ -8,8 +8,10 @@ class User_Settings_Form(forms.ModelForm):
         fields = [
             'pump_state',
             'heater_state',
-#            'pump_duration'
+            'pump_state_start'
         ]
+        widgets = { 'pump_state_start': forms.HiddenInput() }
+
 
 class Sensor_Info_Form(forms.ModelForm):
     class Meta:
