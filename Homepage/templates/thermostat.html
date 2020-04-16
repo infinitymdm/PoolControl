@@ -24,21 +24,34 @@
 {% endblock %}
 
 {% block rightColumn %}
-<div class="row justify-content-center text-center" style="font-size: 16pt;">
+<br>
+<div class="row justify-content-center" style="font-size: 16pt;">
     <div class="col">
         Air Temp: 
     </div>
     <div class="col">
         {{ sensor_data.air_temp }}
+        °F
     </div>
 </div>
 <br>
-<div class="row justify-content-center text-center" style="font-size: 16pt;">
+<div class="row justify-content-center" style="font-size: 16pt;">
         <div class="col">
         Water Temp: 
     </div>
     <div class="col">
         {{ sensor_data.water_temp }}
+        °F
+    </div>
+</div>
+<br>
+<div class="row justify-content-center" style="font-size: 16pt;">
+    <div class="col">
+        Desired Temp: 
+    </div>
+    <div class="col">
+        {{ sensor_data.water_temp_desired }}
+        °F
     </div>
 </div>
 <br>
