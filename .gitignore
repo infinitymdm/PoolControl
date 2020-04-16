@@ -4,6 +4,5 @@ migrations
 venv
 */__init__.py
 *.pyc
-db.sqlite3
 
 /migrations/*
