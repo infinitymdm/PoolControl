@@ -12,7 +12,7 @@ schedules = Schedule.objects.all()
 def home(request):
     form = User_Settings_Form(request.POST or None)
     if form.is_valid():
-#        User_Settings.objects.all().delete()
+        User_Settings.objects.all().delete()
         form.save()
         form = User_Settings_Form()
 
