@@ -25,37 +25,40 @@
 <!-- Right Column -->
 {% block rightColumn %}
 <br>
-<div class="row" style="font-size: 16pt;">
-    <div class="col">
-        Air Temp: 
-    </div>
-    <div class="col">
-        {{ sensor_data.air_temp }}
-        °F
+<div class="card bg-dark">
+    <div class="card-body">
+        <div class="row" style="font-size: 16pt;">
+            <div class="col">
+                Air Temp: 
+            </div>
+            <div class="col">
+                {{ sensor_data.air_temp }}
+                °F
 
-    </div>
-</div>
-<br>
-<div class="row" style="font-size: 16pt;">
-    <div class="col">
-        Water Temp: 
-    </div>
-    <div class="col">
-        {{ sensor_data.water_temp }}
-        °F
-    </div>
-</div>
-<br>
-<div class="row" style="font-size: 16pt;">
-    <div class="col">
-        <form method="POST">
-    
-            {% csrf_token %}
-            <!-- <input type='text', name='schedule', placeholder="Schedule Title" /> -->
-            {{ form.as_p }}
-            <input type='submit' value='Save' />
-        
-        </form>
+            </div>
+        </div>
+        <br>
+        <div class="row" style="font-size: 16pt;">
+            <div class="col">
+                Water Temp: 
+            </div>
+            <div class="col">
+                {{ sensor_data.water_temp }}
+                °F
+            </div>
+        </div>
+        <br>
+        <div class="row" style="font-size: 16pt;">
+            <div class="col">
+                <form method="POST">
+            
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <input type='submit' value='Save' />
+                
+                </form>
+            </div>
+        </div>
     </div>
 </div>
 

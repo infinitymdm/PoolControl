@@ -1,5 +1,5 @@
 from django.db import models
-from datetime import datetime, timezone
+from django.utils import timezone
 
 # Create your models here.
 
@@ -10,7 +10,7 @@ class User_Settings(models.Model):
     water_temp_desired = models.IntegerField(default = 0)
     pump_state = models.BooleanField(default = False)
     heater_state = models.BooleanField(default = False)
-    pump_state_start = models.DateTimeField(default= datetime.now(timezone.utc))
+    pump_state_start = models.DateTimeField(default= timezone.now)
     def __str__(self):
         return 'Pump ON: ' + str(self.pump_state) + ', Heater ON: ' + str(self.heater_state)
 
@@ -19,8 +19,8 @@ class Schedule(models.Model):
     name = models.CharField(max_length=100)
     turn_heater_on = models.BooleanField(default= False)
     # if heater, what temp?
-    turn_on_time = models.TimeField(default= datetime.now().time())
-    turn_off_time = models.TimeField(default= datetime.now().time())
+    turn_on_time = models.TimeField(default= timezone.now)
+    turn_off_time = models.TimeField(default= timezone.now)
     Sunday = models.BooleanField(default= False)
     Monday = models.BooleanField(default= False)
     Tuesday = models.BooleanField(default= False)
