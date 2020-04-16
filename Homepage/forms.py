@@ -12,6 +12,12 @@ class User_Settings_Form(forms.ModelForm):
         ]
         widgets = { 'pump_state_start': forms.HiddenInput() }
 
+class Water_Temp_Form(forms.ModelForm):
+    class Meta:
+        model = User_Settings
+        fields = [
+            'water_temp_desired',
+        ]
 
 class Sensor_Info_Form(forms.ModelForm):
     class Meta:

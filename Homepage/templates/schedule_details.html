@@ -5,44 +5,107 @@
 {% endblock %}
 
 {% block leftColumn %}
-    {{ schedule_object.name }}
+    <div class="row">
+        {{ schedule_object.name }}
+    </div>
+    <div class="row">
+        <div class="col">
+            Heater On: 
+        </div>
+        <div class="col">
+            {{ schedule_object.turn_heater_on }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            Heater Off: 
+        </div>
+        <div class="col">
+            {{ schedule_object.turn_heater_on }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            Turn On Time: 
+        </div>
+        <div class="col">
+            {{ schedule_object.turn_on_time }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            Turn Off Time: 
+        </div>
+        <div class="col">
+            {{ schedule_object.turn_off_time }}
+        </div>
+    </div>
     <br>
-    Heater On: 
-    {{ schedule_object.turn_heater_on }}
-    <br>
-    Heater Off: 
-    {{ schedule_object.turn_heater_on }}
-    <br>
-    Turn On Time: 
-    {{ schedule_object.turn_on_time }}
-    <br>
-    Turn Off Time: 
-    {{ schedule_object.turn_off_time }}
-    <br>
-    Days On:
-    <br>
-    Sunday: 
-    {{ schedule_object.Sunday }}
-    <br>
-    Monday: 
-    {{ schedule_object.Monday }}
-    <br>
-    Tuesday: 
-    {{ schedule_object.Tuesday }}
-    <br>
-    Wednesday: 
-    {{ schedule_object.Wednesday }}
-    <br>
-    Thursday: 
-    {{ schedule_object.Thursday }}
-    <br>
-    Friday: 
-    {{ schedule_object.Friday }}
-    <br>
-    Saturday: 
-    {{ schedule_object.Saturday }}
-    <br>
-    Repeat: 
-    {{ schedule_object.repeat }}
-    
+    <div class="row">
+        Days On:
+    </div>
+    <div class="row">
+        <div class="col">
+            Sunday: 
+        </div>
+        <div class="col">
+            {{ schedule_object.Sunday }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            Monday: 
+        </div>
+        <div class="col">
+            {{ schedule_object.Monday }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            Tuesday: 
+        </div>
+        <div class="col">
+            {{ schedule_object.Tuesday }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            Wednesday: 
+        </div>
+        <div class="col">
+            {{ schedule_object.Wednesday }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            Thursday: 
+        </div>
+        <div class="col">
+            {{ schedule_object.Thursday }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            Friday: 
+        </div>
+        <div class="col">
+            {{ schedule_object.Friday }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            Saturday: 
+        </div>
+        <div class="col">
+            {{ schedule_object.Saturday }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            Repeat: 
+        </div>
+        <div class="col">
+            {{ schedule_object.repeat }}
+        </div>
+    </div>
 {% endblock %}

@@ -11,3 +11,39 @@
     });
 </script>
 {% endblock %}
+
+{% block leftColumn %}
+<div class="row justify-content-center">
+    <i class="wi wi-day-sunny pt-4 pb-4" style="font-size: 5rem;"></i>
+</div>
+<div class="row justify-content-center text-center" style="font-size: 24pt;">
+    {{ current_time.date }}
+    <br>
+    {{ current_time.time }}
+</div>
+{% endblock %}
+
+{% block rightColumn %}
+<div class="row justify-content-center text-center" style="font-size: 16pt;">
+    <div class="col">
+        Air Temp: 
+    </div>
+    <div class="col">
+        {{ sensor_data.air_temp }}
+    </div>
+</div>
+<br>
+<div class="row justify-content-center text-center" style="font-size: 16pt;">
+        <div class="col">
+        Water Temp: 
+    </div>
+    <div class="col">
+        {{ sensor_data.water_temp }}
+    </div>
+</div>
+<form method="POST">
+    {% csrf_token %}
+    {{ user_temp_desired.as_p }}
+    <input type='submit' value='Save' />
+</form>
+{% endblock %}
