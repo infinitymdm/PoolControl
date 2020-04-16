@@ -1,0 +1,111 @@
+{% extends 'generic.html' %}
+
+{% block navbar %}
+{%include 'navbar.html' %}
+{% endblock %}
+
+{% block leftColumn %}
+    <div class="row">
+        {{ schedule_object.name }}
+    </div>
+    <div class="row">
+        <div class="col">
+            Heater On: 
+        </div>
+        <div class="col">
+            {{ schedule_object.turn_heater_on }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            Heater Off: 
+        </div>
+        <div class="col">
+            {{ schedule_object.turn_heater_on }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            Turn On Time: 
+        </div>
+        <div class="col">
+            {{ schedule_object.turn_on_time }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            Turn Off Time: 
+        </div>
+        <div class="col">
+            {{ schedule_object.turn_off_time }}
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        Days On:
+    </div>
+    <div class="row">
+        <div class="col">
+            Sunday: 
+        </div>
+        <div class="col">
+            {{ schedule_object.Sunday }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            Monday: 
+        </div>
+        <div class="col">
+            {{ schedule_object.Monday }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            Tuesday: 
+        </div>
+        <div class="col">
+            {{ schedule_object.Tuesday }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            Wednesday: 
+        </div>
+        <div class="col">
+            {{ schedule_object.Wednesday }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            Thursday: 
+        </div>
+        <div class="col">
+            {{ schedule_object.Thursday }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            Friday: 
+        </div>
+        <div class="col">
+            {{ schedule_object.Friday }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            Saturday: 
+        </div>
+        <div class="col">
+            {{ schedule_object.Saturday }}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            Repeat: 
+        </div>
+        <div class="col">
+            {{ schedule_object.repeat }}
+        </div>
+    </div>
+{% endblock %}

@@ -5,6 +5,8 @@ urlpatterns = [
     
     # Go to Schedule Page
     path('schedule/', views.schedule, name='schedule'),
+    # Go to the selected schedule_detail Page
+    path('schedule/<int:schedule_id>/', views.schedule_details, name='schedule_details'),
 
     # Go to Thermostat Page
     path('thermostat/', views.thermostat, name='thermostat'),

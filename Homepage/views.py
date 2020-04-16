@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.db import models
 
-from .forms import Schedule_Form, User_Settings_Form
+from .forms import Schedule_Form, User_Settings_Form, Water_Temp_Form
 from .models import Sensor_Info, Schedule, User_Settings
 from datetime import datetime, timezone
 
@@ -42,6 +42,7 @@ def schedule(request):
     form = Schedule_Form(request.POST or None)
     if form.is_valid():
         form.save()
+        form = Schedule_Form()
 
     context = {
         'form' : form,
@@ -50,11 +51,35 @@ def schedule(request):
     }
     return render(request, 'schedule.html', context)
 
+def schedule_details(request, schedule_id):
+    schedule_obj = Schedule.objects.get(id=schedule_id)
+    context = {
+        'schedule_object': schedule_obj,
+    }
+    return render(request, 'schedule_details.html', context)
+
+
 def thermostat(request):
-    return render(request, 'thermostat.html', { "meta" : meta })
+    form = Water_Temp_Form(request.POST or None)
+    if form.is_valid():
+        form.save()
+        form = User_Temp_Form()
+    sensor_obj = Sensor_Info.objects.latest('id')
+    sensor_data = {
+        'water_temp': sensor_obj.water_temp_sensed,
+        'air_temp': sensor_obj.air_temp_sensed
+    }
+    current_time = datetime.now()
+    context = {
+        'user_temp_desired': form,
+        'sensor_data': sensor_data,
+        'current_time': current_time,
+        'meta': meta
+    }
+    return render(request, 'thermostat.html', context)
 
 def water_info(request):
-    water_obj = Sensor_Info.objects.get(id=1)
+    water_obj = Sensor_Info.objects.latest('id')
     water_data = {
         'water_temp': water_obj.water_temp_sensed,
         'water_pH': water_obj.water_pH_sensed,
@@ -62,7 +87,7 @@ def water_info(request):
     }
     context = {
         'water_data': water_data,
-        'meta': meta
+        'meta': meta,
     }
     return render(request, 'water_info.html', context)
     
