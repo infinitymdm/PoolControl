@@ -80,11 +80,10 @@ def thermostat(request):
         'water_temp': sensor_obj.water_temp_sensed,
         'air_temp': sensor_obj.air_temp_sensed
     }
-    current_time = datetime.now()
     context = {
         'user_temp_desired': form,
         'sensor_data': sensor_data,
-        'current_time': current_time,
+        'current_time': timezone.now(),
         'meta': meta
     }
     return render(request, 'thermostat.html', context)
