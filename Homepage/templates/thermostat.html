@@ -41,6 +41,7 @@
         {{ sensor_data.water_temp }}
     </div>
 </div>
+<br>
 <form method="POST">
     {% csrf_token %}
     {{ user_temp_desired.as_p }}
