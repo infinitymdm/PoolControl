@@ -1,0 +1,48 @@
+{% extends 'generic.html' %}
+
+{% block navbar %}
+{%include 'navbar.html' %}
+{% endblock %}
+
+{% block leftColumn %}
+    {{ schedule_object.name }}
+    <br>
+    Heater On: 
+    {{ schedule_object.turn_heater_on }}
+    <br>
+    Heater Off: 
+    {{ schedule_object.turn_heater_on }}
+    <br>
+    Turn On Time: 
+    {{ schedule_object.turn_on_time }}
+    <br>
+    Turn Off Time: 
+    {{ schedule_object.turn_off_time }}
+    <br>
+    Days On:
+    <br>
+    Sunday: 
+    {{ schedule_object.Sunday }}
+    <br>
+    Monday: 
+    {{ schedule_object.Monday }}
+    <br>
+    Tuesday: 
+    {{ schedule_object.Tuesday }}
+    <br>
+    Wednesday: 
+    {{ schedule_object.Wednesday }}
+    <br>
+    Thursday: 
+    {{ schedule_object.Thursday }}
+    <br>
+    Friday: 
+    {{ schedule_object.Friday }}
+    <br>
+    Saturday: 
+    {{ schedule_object.Saturday }}
+    <br>
+    Repeat: 
+    {{ schedule_object.repeat }}
+    
+{% endblock %}

@@ -42,6 +42,7 @@ def schedule(request):
     form = Schedule_Form(request.POST or None)
     if form.is_valid():
         form.save()
+        form = Schedule_Form()
 
     context = {
         'form' : form,
@@ -49,6 +50,14 @@ def schedule(request):
         'meta' : meta
     }
     return render(request, 'schedule.html', context)
+
+def schedule_details(request, schedule_id):
+    schedule_obj = Schedule.objects.get(id=schedule_id)
+    context = {
+        'schedule_object': schedule_obj,
+    }
+    return render(request, 'schedule_details.html', context)
+
 
 def thermostat(request):
     return render(request, 'thermostat.html', { "meta" : meta })
