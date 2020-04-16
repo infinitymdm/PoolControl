@@ -74,11 +74,13 @@ def thermostat(request):
     form = Water_Temp_Form(request.POST or None)
     if form.is_valid():
         form.save()
-        form = User_Temp_Form()
+        form = Water_Temp_Form()
     sensor_obj = Sensor_Info.objects.latest('id')
+    user_settings_obj = User_Settings.objects.latest('id')
     sensor_data = {
         'water_temp': sensor_obj.water_temp_sensed,
-        'air_temp': sensor_obj.air_temp_sensed
+        'air_temp': sensor_obj.air_temp_sensed,
+        'water_temp_desired': user_settings_obj.water_temp_desired,
     }
     context = {
         'user_temp_desired': form,
